@@ -9,11 +9,13 @@ class SensorData extends Model
 {
     use HasFactory;
 
+    protected $table = 'sensor_datas';
+
     protected $fillable = [
         'parameter',
         'value',
         'time',
     ];
 
-    protected $timestamps = false;
+    public $timestamps = false;
 }

@@ -879,28 +879,28 @@
   <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
   <script>
     new DataTable('#tableWindSpeed', {
-      ajax: 'api/get_sensor_datas.php?parameter=wind_speed'
+      ajax: "/api/sensor-datas" + '?parameter=wind_speed'
     });
     new DataTable('#tableWindDirection', {
-      ajax: 'api/get_sensor_datas.php?parameter=wind_direction'
+      ajax: "/api/sensor-datas" + '?parameter=wind_direction'
     });
     new DataTable('#tableTemperature', {
-      ajax: 'api/get_sensor_datas.php?parameter=temperature'
+      ajax: "/api/sensor-datas" + '?parameter=temperature'
     });
     new DataTable('#tableHumidity', {
-      ajax: 'api/get_sensor_datas.php?parameter=humidity'
+      ajax: "/api/sensor-datas" + '?parameter=humidity'
     });
     new DataTable('#tablePressure', {
-      ajax: 'api/get_sensor_datas.php?parameter=pressure'
+      ajax: "/api/sensor-datas" + '?parameter=pressure'
     });
     new DataTable('#tableRainfall', {
-      ajax: 'api/get_sensor_datas.php?parameter=rainfall'
+      ajax: "/api/sensor-datas" + '?parameter=rainfall'
     });
     new DataTable('#tableSolarRadiation', {
-      ajax: 'api/get_sensor_datas.php?parameter=solar_radiation'
+      ajax: "/api/sensor-datas" + '?parameter=solar_radiation'
     });
     new DataTable('#tablePARSensor', {
-      ajax: 'api/get_sensor_datas.php?parameter=par_sensor'
+      ajax: "/api/sensor-datas" + '?parameter=par_sensor'
     });
   </script>
   <script src="{{asset('js/core/popper.min.js')}}"></script>
