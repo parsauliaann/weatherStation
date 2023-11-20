@@ -23,7 +23,7 @@ Route::get('sensor-datas', function(Request $request){
     $sensorDatas = SensorData::select(['value', 'time'])->where('parameter', $request->parameter)->get();
 
     $sensorDatas = $sensorDatas->map(function($sensor){
-        return [$sensor->value, $sensor->time];
+        return [$sensor->time, $sensor->value];
     });
 
     return response()->json(['data' => $sensorDatas]);
