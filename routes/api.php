@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\SensorData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +17,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::get('sensor-datas', function(Request $request){
+    $sensorDatas = SensorData::select(['value', 'time'])->where('parameter', $request->parameter)->get();
+
+    $sensorDatas = $sensorDatas->map(function($sensor){
+        return [$sensor->value, $sensor->time];
+    });
+
+    return response()->json(['data' => $sensorDatas]);
 });
