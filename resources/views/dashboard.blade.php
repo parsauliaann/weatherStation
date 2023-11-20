@@ -14,8 +14,8 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
   <!-- Nucleo Icons -->
-  <link href="{{assets('css/nucleo-icons.css')}}" rel="stylesheet" />
-  <link href="{{assets('css/nucleo-svg.css')" rel="stylesheet" />
+  <link href="{{ assets('css/nucleo-icons.css') }}" rel="stylesheet" />
+  <link href="{{ assets('css/nucleo-svg.css') }}" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/b7f80dc676.js" crossorigin="anonymous"></script>
   <link href="{{ assets('css/nucleo-svg.css') }}" rel="stylesheet" />
@@ -33,7 +33,7 @@
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
-          <img src="{{assets('img/ugtechnopark.png')" style="height:120px; object-fit: contain">
+          <img src="{{assets('img/ugtechnopark.png')}}" style="height:120px; object-fit: contain">
           <h1 class="text-white">S475 Weather Station UG Techno Park</h1> 
           <h6 class="font-weight-bolder text-white mb-0">Unnamed Road, 66Q5+5WX, Jamali, Kec. Mande, Kabupaten Cianjur, Jawa Barat 43292, Indonesia UG Techno Park</h6>
         </nav>
