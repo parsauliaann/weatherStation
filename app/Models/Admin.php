@@ -15,6 +15,11 @@ class Admin extends Authenticatable
         'username',
         'password'
     ];
+
+    protected $casts = [
+        'time' => 'datetime',
+        'password' => 'hashed',
+    ];
     
-    protected $timestamps = false;
+    public $timestamps = false;
 }

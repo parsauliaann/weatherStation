@@ -40,7 +40,8 @@
                   <p class="mb-0">Enter your Username and password to sign in</p>
                 </div>
                 <div class="card-body">
-                  <form action="" method="POST">
+                  <form action="{{ route('login.store') }}" method="POST">
+                    @csrf
                     <div class="mb-3">  
                       <input type="text" class="form-control form-control-lg" name="username" placeholder="Username" aria-label="Username">
                     </div>
