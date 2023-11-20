@@ -25,7 +25,7 @@
 
 <body>
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
-  <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+  {{-- <aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
     <div class="sidenav-header" style="background-color:#da42f5">
       <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href=" https://demos.creative-tim.com/argon-dashboard/pages/dashboard.html " target="_blank">
@@ -70,11 +70,11 @@
         </li>
       </ul>
     </div>
-  </aside>
+  </aside> --}}
   <main class="main-content position-relative border-radius-lg ">
     <!-- Navbar -->
-    <button id="closeNav">&#9776; Open Sidebar</button>
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
+    {{-- <button id="closeNav">&#9776; Open Sidebar</button> --}}
+    {{-- <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
@@ -84,24 +84,24 @@
           <h6 class="font-weight-bolder text-white mb-0">Tables</h6>
         </nav>
       </div>
-    </nav>
+    </nav> --}}
     <!-- End Navbar -->
     <div class="container-fluid py-4">
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Authors table</h6>
+              <h6>Admins</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Parameter</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Value</th>
                       <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Status</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Time</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
@@ -285,17 +285,17 @@
         <div class="col-12">
           <div class="card mb-4">
             <div class="card-header pb-0">
-              <h6>Projects table</h6>
+              <h6>Sensor Datas</h6>
             </div>
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center justify-content-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Project</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Budget</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
-                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Completion</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Parameter</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Value</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Time</th>
+                      {{-- <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Completion</th> --}}
                       <th></th>
                     </tr>
                   </thead>
@@ -317,7 +317,7 @@
                       <td>
                         <span class="text-xs font-weight-bold">working</span>
                       </td>
-                      <td class="align-middle text-center">
+                      {{-- <td class="align-middle text-center">
                         <div class="d-flex align-items-center justify-content-center">
                           <span class="me-2 text-xs font-weight-bold">60%</span>
                           <div>
@@ -326,7 +326,7 @@
                             </div>
                           </div>
                         </div>
-                      </td>
+                      </td> --}}
                       <td class="align-middle">
                         <button class="btn btn-link text-secondary mb-0">
                           <i class="fa fa-ellipsis-v text-xs"></i>
@@ -350,7 +350,7 @@
                       <td>
                         <span class="text-xs font-weight-bold">done</span>
                       </td>
-                      <td class="align-middle text-center">
+                      {{-- <td class="align-middle text-center">
                         <div class="d-flex align-items-center justify-content-center">
                           <span class="me-2 text-xs font-weight-bold">100%</span>
                           <div>
@@ -359,7 +359,7 @@
                             </div>
                           </div>
                         </div>
-                      </td>
+                      </td> --}}
                       <td class="align-middle">
                         <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
                           <i class="fa fa-ellipsis-v text-xs"></i>
@@ -383,7 +383,7 @@
                       <td>
                         <span class="text-xs font-weight-bold">canceled</span>
                       </td>
-                      <td class="align-middle text-center">
+                      {{-- <td class="align-middle text-center">
                         <div class="d-flex align-items-center justify-content-center">
                           <span class="me-2 text-xs font-weight-bold">30%</span>
                           <div>
@@ -392,7 +392,7 @@
                             </div>
                           </div>
                         </div>
-                      </td>
+                      </td> --}}
                       <td class="align-middle">
                         <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
                           <i class="fa fa-ellipsis-v text-xs"></i>
@@ -416,7 +416,7 @@
                       <td>
                         <span class="text-xs font-weight-bold">canceled</span>
                       </td>
-                      <td class="align-middle text-center">
+                      {{-- <td class="align-middle text-center">
                         <div class="d-flex align-items-center justify-content-center">
                           <span class="me-2 text-xs font-weight-bold">0%</span>
                           <div>
@@ -425,7 +425,7 @@
                             </div>
                           </div>
                         </div>
-                      </td>
+                      </td> --}}
                       <td class="align-middle">
                         <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
                           <i class="fa fa-ellipsis-v text-xs"></i>
@@ -449,7 +449,7 @@
                       <td>
                         <span class="text-xs font-weight-bold">working</span>
                       </td>
-                      <td class="align-middle text-center">
+                      {{-- <td class="align-middle text-center">
                         <div class="d-flex align-items-center justify-content-center">
                           <span class="me-2 text-xs font-weight-bold">80%</span>
                           <div>
@@ -458,7 +458,7 @@
                             </div>
                           </div>
                         </div>
-                      </td>
+                      </td> --}}
                       <td class="align-middle">
                         <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
                           <i class="fa fa-ellipsis-v text-xs"></i>
@@ -482,7 +482,7 @@
                       <td>
                         <span class="text-xs font-weight-bold">done</span>
                       </td>
-                      <td class="align-middle text-center">
+                      {{-- <td class="align-middle text-center">
                         <div class="d-flex align-items-center justify-content-center">
                           <span class="me-2 text-xs font-weight-bold">100%</span>
                           <div>
@@ -491,7 +491,7 @@
                             </div>
                           </div>
                         </div>
-                      </td>
+                      </td> --}}
                       <td class="align-middle">
                         <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
                           <i class="fa fa-ellipsis-v text-xs"></i>
