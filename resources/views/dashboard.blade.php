@@ -803,7 +803,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="tables.php">
+          <a class="nav-link " href="{{ route('admins') }}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
             </div>
@@ -865,96 +865,88 @@
         datasets: [
           {
             label: "Wind Speed",
-            tension: 0.4,
             borderWidth: 0,
-            pointRadius: 0,
+            pointRadius: 2,
             borderColor: "#5e72e4",
             backgroundColor: gradientStroke1,
-            borderWidth: 3,
+            borderWidth: 2,
             fill: true,
             data: [1000, 40, 300, 220, 500, 250, 400, 230, 500],
             maxBarThickness: 6
           },
           {
             label: "Wind Direction",
-            tension: 0.4,
             borderWidth: 0,
-            pointRadius: 0,
+            pointRadius: 2,
             borderColor: "#ff6721",
             backgroundColor: gradientStroke1,
-            borderWidth: 3,
+            borderWidth: 2,
             fill: true,
             data: [450, 150, 700, 50, 600, 250, 120, 350, 780],
             maxBarThickness: 6
           },
           {
             label: "Temperature",
-            tension: 0.4,
             borderWidth: 0,
-            pointRadius: 0,
+            pointRadius: 2,
             borderColor: "#21b1ff",
             backgroundColor: gradientStroke1,
-            borderWidth: 3,
+            borderWidth: 2,
             fill: true,
             data: [27.5, 14.3, 32.8, 19.6, 25.2, 8.9, 36.7, 22.1, 30.4],
             maxBarThickness: 6
           },
           {
             label: "Humidity",
-            tension: 0.4,
             borderWidth: 0,
-            pointRadius: 0,
+            pointRadius: 2,
             borderColor: "#f5c842",
             backgroundColor: gradientStroke1,
-            borderWidth: 3,
+            borderWidth: 2,
             fill: true,
             data: [80, 90, 100, 300, 900, 800, 100, 200, 300],
             maxBarThickness: 6
           },
           {
             label: "Pressure",
-            tension: 0.4,
             borderWidth: 0,
-            pointRadius: 0,
+            pointRadius: 2,
             borderColor: "#40c6ff",
             backgroundColor: gradientStroke1,
-            borderWidth: 3,
+            borderWidth: 2,
             fill: true,
             data: [105, 78, 120, 95, 110, 85, 130, 102, 115],
             maxBarThickness: 6
           },
           {
             label: "Rainfall",
-            tension: 0.4,
             borderWidth: 0,
-            pointRadius: 0,
+            pointRadius: 2,
             borderColor: "#cbeaf7",
             backgroundColor: gradientStroke1,
-            borderWidth: 3,
+            borderWidth: 2,
             fill: true,
             data: [15.2, 30.7, 20.5, 32.1, 18.6, 25.8, 30.2, 21.4, 27.9, 19.0],
             maxBarThickness: 6
           },
           {
             label: "Solar Radiation",
-            tension: 0.4,
             borderWidth: 0,
-            pointRadius: 0,
+            pointRadius: 2,
             borderColor: "#464e52",
             backgroundColor: gradientStroke1,
-            borderWidth: 3,
+            borderWidth: 2,
             fill: true,
             data: [150.3, 280.7, 200.5, 320.1, 180.6, 250.8, 300.2, 210.4, 270.9, 190.0 ],
             maxBarThickness: 6
           },
           {
             label: "Par Sensor",
-            tension: 0.4,
             borderWidth: 0,
-            pointRadius: 0,
+            pointRadius: 2,
             borderColor: "#bfb10f",
             backgroundColor: gradientStroke1,
-            borderWidth: 3,
+            borderWidth: 2,
             fill: true,
             data: [482, 763, 215, 689, 374, 921, 150, 567, 842, 103],
             maxBarThickness: 6
