@@ -42,7 +42,9 @@
           </div>
           <ul class="navbar-nav  justify-content-end">      
             <li class="nav-item d-flex align-items-center">
-              <form action="" method="POST">
+              <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                @method('DELETE')
                 <button class="btn nav-link text-white font-weight-bold px-0 shadow-none" name="logout">
                   <i class="fa fa-sign-out me-sm-1"></i>
                   <span class="d-sm-inline d-none">Log out</span>
