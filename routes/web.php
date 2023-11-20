@@ -24,7 +24,7 @@ Route::controller(AuthController::class)->group(function(){
         Route::post('/', 'store')->name('.store');
     });
 
-    Route::delete('/', 'logout')->name('.logout');
+    Route::delete('/', 'logout')->name('logout');
 });
 
 Route::middleware('auth')->group(function(){
