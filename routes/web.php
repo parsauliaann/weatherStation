@@ -34,5 +34,5 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/admins', function(){
         return view('tables');
-    });
+    })->name('admins');
 });
