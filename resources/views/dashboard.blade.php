@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
-  <link rel="icon" type="image/png" href="{{'img/gundar.png'}}">
+  <link rel="icon" type="image/png" href="{{asset('img/gundar.png')}}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
   <title>
@@ -42,7 +42,9 @@
           </div>
           <ul class="navbar-nav  justify-content-end">      
             <li class="nav-item d-flex align-items-center">
-              <form action="" method="POST">
+              <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                @method('DELETE')
                 <button class="btn nav-link text-white font-weight-bold px-0 shadow-none" name="logout">
                   <i class="fa fa-sign-out me-sm-1"></i>
                   <span class="d-sm-inline d-none">Log out</span>
