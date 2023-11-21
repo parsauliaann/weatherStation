@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\SensorData;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('sensor-datas', function(Request $request){
-    $sensorDatas = SensorData::select(['value', 'time'])->where('parameter', $request->parameter)->get();
+    $sensorDatas = SensorData::select(['value', 'time'])
+        ->where('parameter', $request->parameter)
+        ->whereDate('time', Carbon::now())
+        ->get();
 
     $sensorDatas = $sensorDatas->map(function($sensor){
         return [$sensor->time, $sensor->value];
