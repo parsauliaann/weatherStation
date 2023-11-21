@@ -96,16 +96,16 @@
         </main>
 
         <!--   Core JS Files   -->
+        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
         <script src="{{asset('js/core/popper.min.js')}}"></script>
         <script src="{{asset('js/core/bootstrap.min.js')}}"></script>
         <script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>
         <script src="{{asset('js/plugins/smooth-scrollbar.min.js')}}"></script>
         <script src="{{asset('js/plugins/chartjs.min.js')}}"></script>
         <script src="{{asset('js/argon-dashboard.min.js')}}"></script>
-        <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-        <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
         @livewireScripts
         @yield('js')
     </body>
