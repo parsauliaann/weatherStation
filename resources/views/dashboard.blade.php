@@ -6,27 +6,25 @@
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
             <div class="card-body p-3">
-              <div class="row">
+                <div class="row">
                 <div class="col-8">
-                  <div class="numbers">
+                    <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Wind Speed</p>
-                    <h3 class="font-weight-bolder">
-                      0.8 m/s
-                    </h3>
+                    @livewire('dashboard.parameter', ['parameter' => 'wind_speed', 'unit' => 'm/s'])
                     <a href="" style="font-size: 0.9em" data-bs-toggle="modal" data-bs-target="#windSpeedModal">See detail</a>
-                  </div>
+                    </div>
                 </div>
                 <div class="col-4 text-end">
-                  <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
+                    <div class="icon icon-shape bg-gradient-primary shadow-primary text-center rounded-circle">
                     <i class="fa-solid fa-wind" style='font-size:24px'></i>
-                  </div>
+                    </div>
                 </div>
-              </div>
+                </div>
             </div>
-          </div>
+         </div>
           <!-- Modal -->
           <div class="modal fade" id="windSpeedModal" tabindex="-1" aria-labelledby="windSpeedModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
+            <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title fs-5" id="windSpeedModalLabel">Wind Speed</h1>
@@ -62,9 +60,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Wind Direction</p>
-                    <h3 class="font-weight-bolder">
-                      261°
-                    </h3>
+                    @livewire('dashboard.parameter', ['parameter' => 'wind_direction', 'unit' => '°'])
                     <a href="" style="font-size: 0.9em" data-bs-toggle="modal" data-bs-target="#windDirection">See detail</a>
                   </div>
                 </div>
@@ -115,9 +111,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Temperature</p>
-                    <h3 class="font-weight-bolder">
-                      29.9 °C
-                    </h3>
+                    @livewire('dashboard.parameter', ['parameter' => 'temperature', 'unit' => '°C'])
                     <a href="" style="font-size: 0.9em" data-bs-toggle="modal" data-bs-target="#temperatureModal">See detail</a>
                   </div>
                 </div>
@@ -168,9 +162,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Humidity</p>
-                    <h3 class="font-weight-bolder">
-                      75.9%
-                    </h3>
+                    @livewire('dashboard.parameter', ['parameter' => 'humidity', 'unit' => '%'])
                     <a href="" style="font-size: 0.9em" data-bs-toggle="modal" data-bs-target="#humidity">See detail</a>
                   </div>
                 </div>
@@ -221,9 +213,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Pressure</p>
-                    <h3 class="font-weight-bolder">
-                      0.9812
-                    </h3>
+                    @livewire('dashboard.parameter', ['parameter' => 'pressure'])
                     <a href="" style="font-size: 0.9em" data-bs-toggle="modal" data-bs-target="#pressureModal">See detail</a>
                   </div>
                 </div>
@@ -273,9 +263,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Rainfall</p>
-                    <h3 class="font-weight-bolder">
-                      0.10mm
-                    </h3>
+                    @livewire('dashboard.parameter', ['parameter' => 'rainfall', 'unit' => 'mm'])
                     <a href="" style="font-size: 0.9em" data-bs-toggle="modal" data-bs-target="#rainfallModal">See detail</a>
                   </div>
                 </div>
@@ -326,9 +314,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Solar Radiaton</p>
-                    <h3 class="font-weight-bolder">
-                      523 W/m²
-                    </h3>
+                    @livewire('dashboard.parameter', ['parameter' => 'solar_radiation', 'unit' => ' w/m²'])
                     <a href="" style="font-size: 0.9em" data-bs-toggle="modal" data-bs-target="#solarRadiationModal">See detail</a>
                   </div>
                 </div>
@@ -356,13 +342,13 @@
                     <thead>
                         <tr>
                             <th>Waktu</th>
-                            <th>W/m²</th>
+                            <th>w/m²</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>Waktu</th>
-                            <th>W/m²</th>
+                            <th>w/m²</th>
                         </tr>
                     </tfoot>
                 </table>
@@ -379,9 +365,7 @@
                 <div class="col-8">
                   <div class="numbers">
                     <p class="text-sm mb-0 text-uppercase font-weight-bold">PAR Sensor</p>
-                    <h3 class="font-weight-bolder">
-                      1120 w/m²
-                    </h3>
+                    @livewire('dashboard.parameter', ['parameter' => 'par_sensor', 'unit' => ' w/m²'])
                     <a href="" style="font-size: 0.9em" data-bs-toggle="modal" data-bs-target="#parSensorModal">See detail</a>
                   </div>
                 </div>
@@ -408,13 +392,13 @@
                     <thead>
                         <tr>
                             <th>Waktu</th>
-                            <th>W/m²</th>
+                            <th>w/m²</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>Waktu</th>
-                            <th>W/m²</th>
+                            <th>w/m²</th>
                         </tr>
                     </tfoot>
                 </table>

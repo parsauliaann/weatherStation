@@ -5,8 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
         <link rel="icon" type="image/png" href="{{asset('img/gundar.png')}}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
         <title>Dashboard Weather Station S475</title>
 
         <!-- Fonts and icons -->
@@ -22,8 +20,10 @@
         <link href="{{ asset('css/nucleo-svg.css') }}" rel="stylesheet" />
 
         <!-- CSS Files -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
         <link id="pagestyle" href="{{asset('css/argon-dashboard.css')}}" rel="stylesheet" />
-
+        @livewireStyles
         @yield('css')
     </head>
     <body class="g-sidenav-show bg-gray-100" style="min-height: 100vh; background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);">
@@ -106,6 +106,7 @@
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
+        @livewireScripts
         @yield('js')
     </body>
 </html>
