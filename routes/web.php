@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Models\Admin;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,8 +36,23 @@ Route::middleware('auth')->group(function(){
     })->name('dashboard');
 
     Route::get('/admins', function(){
-        return view('tables');
+        $admins = Admin::all();
+
+        return view('admins', [
+            'admins' => $admins,
+        ]);
     })->name('admins');
+
+    Route::post('/admins', function(Request $request){
+        Admin::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'status' => $request->status,
+        ]);
+
+        return back();
+    })->name('admins.store');
 
     Route::get('/dataanalysis', function(){
         return view('dataanalysis');
