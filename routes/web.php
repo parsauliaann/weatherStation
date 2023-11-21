@@ -35,4 +35,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/admins', function(){
         return view('tables');
     })->name('admins');
+
+    Route::get('/dataanalysis', function(){
+        return view('dataanalysis');
+    })->name('dataanalysis');
 });

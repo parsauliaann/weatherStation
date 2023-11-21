@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
   <link rel="icon" type="image/png" href="{{asset('img/gundar.png')}}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
   <title>
     Dashboard Weather Station S475
@@ -23,8 +23,9 @@
   <link id="pagestyle" href="{{asset('css/argon-dashboard.css')}}" rel="stylesheet" />
 </head>
 
-<body class="g-sidenav-show   bg-gray-100">
-  <div class="min-height-500 position-absolute w-100" style="background-color:#FF9130"></div> 
+<body class="g-sidenav-show   bg-gray-100" style="background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);"
+>
+  <div class="min-height-500 position-absolute w-100" ></div> 
   
   <main class="main-content position-relative border-radius-lg main ">
   <!-- <button id="closeNav">&#9776; Open Sidebar</button> -->
@@ -787,10 +788,10 @@
     <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
     <i class="fa-solid fa-bars" style="color: #1a9957;"></i>
     </a>
-    <div class="card shadow-lg">
+    <div class="card shadow-sm">
       <div class="card-header pb-0 pt-3 sidenav-header">
         <div class="float-start">
-          <h5 class=" mt 0">S475 Weather Station UG Techno Park</h5>
+          <h4 class=" mt 0">S475 Weather Station UG Techno Park</h4>
         </div>
       </div>
       <ul class="navbar-nav">
@@ -805,9 +806,17 @@
         <li class="nav-item">
           <a class="nav-link " href="{{ route('admins') }}">
             <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+              <i class="ni ni-single-02 text-info text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1">Admin</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="{{ route('dataanalysis') }}">
+            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-chart-bar-32 text-warning text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Data Analysis</span>
           </a>
         </li>
       </div>
