@@ -429,28 +429,28 @@
 @section('js')
   <script>
     new DataTable('#tableWindSpeed', {
-      ajax: "/api/sensor-datas" + '?parameter=wind_speed'
+      ajax: "/api/sensor-datas" + '?parameter=wind_speed&today=1'
     });
     new DataTable('#tableWindDirection', {
-      ajax: "/api/sensor-datas" + '?parameter=wind_direction'
+      ajax: "/api/sensor-datas" + '?parameter=wind_direction&today=1'
     });
     new DataTable('#tableTemperature', {
-      ajax: "/api/sensor-datas" + '?parameter=temperature'
+      ajax: "/api/sensor-datas" + '?parameter=temperature&today=1'
     });
     new DataTable('#tableHumidity', {
-      ajax: "/api/sensor-datas" + '?parameter=humidity'
+      ajax: "/api/sensor-datas" + '?parameter=humidity&today=1'
     });
     new DataTable('#tablePressure', {
-      ajax: "/api/sensor-datas" + '?parameter=pressure'
+      ajax: "/api/sensor-datas" + '?parameter=pressure&today=1'
     });
     new DataTable('#tableRainfall', {
-      ajax: "/api/sensor-datas" + '?parameter=rainfall'
+      ajax: "/api/sensor-datas" + '?parameter=rainfall&today=1'
     });
     new DataTable('#tableSolarRadiation', {
-      ajax: "/api/sensor-datas" + '?parameter=solar_radiation'
+      ajax: "/api/sensor-datas" + '?parameter=solar_radiation&today=1'
     });
     new DataTable('#tablePARSensor', {
-      ajax: "/api/sensor-datas" + '?parameter=par_sensor'
+      ajax: "/api/sensor-datas" + '?parameter=par_sensor&today=1'
     });
   </script>
 

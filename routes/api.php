@@ -22,11 +22,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('sensor-datas', function(Request $request){
     $sensorDatas = SensorData::select(['value', 'time'])
-        ->where('parameter', $request->parameter)
-        ->whereDate('time', Carbon::now())
-        ->get();
+        ->where('parameter', $request->parameter);
 
-    $sensorDatas = $sensorDatas->map(function($sensor){
+    if($request->today == '1'){
+        $sensorDatas->whereDate('time', Carbon::now());
+    }
+
+    $sensorDatas = $sensorDatas->get()->map(function($sensor){
         return [$sensor->time, $sensor->value];
     });
 
