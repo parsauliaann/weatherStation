@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Models\Admin;
+use App\Models\SensorData;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +32,41 @@ Route::controller(AuthController::class)->group(function(){
 });
 
 Route::middleware('auth')->group(function(){
-    Route::get('/dashboard', function(){
+    Route::get('/dashboard', function(Request $request){
+        if($request->isJson()){
+            $parameters = ['wind_speed', 'wind_direction', 'temperature', 'humidity', 'presure', 'rainfall', 'solar_radiation', 'par_sensor'];
+
+            if($request->last){
+                $sensor = SensorData::where('time', '>', $request->last)->first();
+                $data = [];
+
+                foreach($parameters as $parameter){
+                    $sensorData = SensorData::where('time', $sensor?->time)->where('parameter', $parameter)->first();
+                    $data[] = $sensorData ? $sensorData->value : 0;
+                }
+
+                return response()->json([
+                    'label' => $sensor?->time,
+                    'data' => $data,
+                ]);
+            }
+
+            $labels = array_reverse(SensorData::select('time')->orderBy('time', 'DESC')->groupBy('time')->take(10)->pluck('time')->toArray());
+    
+            $data = [];
+            foreach($labels as $label){
+                foreach($parameters as $parameter){
+                    $sensorData = SensorData::where('time', $label)->where('parameter', $parameter)->first();
+                    $data[$parameter][] = $sensorData ? $sensorData->value : 0;
+                }
+            }
+
+            return response()->json([
+                'labels' => $labels,
+                'data' => $data,
+            ]);
+        }
+
         return view('dashboard');
     })->name('dashboard');
     

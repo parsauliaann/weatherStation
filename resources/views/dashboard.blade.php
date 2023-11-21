@@ -477,10 +477,11 @@
     gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
     gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
     gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
-    new Chart(ctx1, {
+
+    let chart = new Chart(ctx1, {
       type: "line",
       data: {
-        labels: ["07.00", "08.00", "09.00", "10.00", "11.00", "12.00", "13.00", "14.00", "15.00"],
+        labels: [],
         datasets: [
           {
             label: "Wind Speed",
@@ -490,7 +491,7 @@
             backgroundColor: gradientStroke1,
             borderWidth: 2,
             fill: true,
-            data: [1000, 40, 300, 220, 500, 250, 400, 230, 500],
+            data: [],
             maxBarThickness: 6
           },
           {
@@ -501,7 +502,7 @@
             backgroundColor: gradientStroke1,
             borderWidth: 2,
             fill: true,
-            data: [450, 150, 700, 50, 600, 250, 120, 350, 780],
+            data: [],
             maxBarThickness: 6
           },
           {
@@ -512,7 +513,7 @@
             backgroundColor: gradientStroke1,
             borderWidth: 2,
             fill: true,
-            data: [27.5, 14.3, 32.8, 19.6, 25.2, 8.9, 36.7, 22.1, 30.4],
+            data: [],
             maxBarThickness: 6
           },
           {
@@ -523,7 +524,7 @@
             backgroundColor: gradientStroke1,
             borderWidth: 2,
             fill: true,
-            data: [80, 90, 100, 300, 900, 800, 100, 200, 300],
+            data: [],
             maxBarThickness: 6
           },
           {
@@ -534,7 +535,7 @@
             backgroundColor: gradientStroke1,
             borderWidth: 2,
             fill: true,
-            data: [105, 78, 120, 95, 110, 85, 130, 102, 115],
+            data: [],
             maxBarThickness: 6
           },
           {
@@ -545,7 +546,7 @@
             backgroundColor: gradientStroke1,
             borderWidth: 2,
             fill: true,
-            data: [15.2, 30.7, 20.5, 32.1, 18.6, 25.8, 30.2, 21.4, 27.9, 19.0],
+            data: [],
             maxBarThickness: 6
           },
           {
@@ -556,7 +557,7 @@
             backgroundColor: gradientStroke1,
             borderWidth: 2,
             fill: true,
-            data: [150.3, 280.7, 200.5, 320.1, 180.6, 250.8, 300.2, 210.4, 270.9, 190.0 ],
+            data: [],
             maxBarThickness: 6
           },
           {
@@ -567,7 +568,7 @@
             backgroundColor: gradientStroke1,
             borderWidth: 2,
             fill: true,
-            data: [482, 763, 215, 689, 374, 921, 150, 567, 842, 103],
+            data: [],
             maxBarThickness: 6
           }
         ],
@@ -628,5 +629,53 @@
         },
       },
     });
+
+    (async () => {
+      const response = await fetch("/dashboard", {
+        headers: {
+          "Content-Type": "application/json",
+        }
+      });
+
+      const responseJson = await response.json();
+
+      chart.data.labels = responseJson.labels;
+      chart.data.datasets.forEach((dataset, index) => {
+          dataset.data = responseJson.data[dataset.label.replace(' ', '_').toLowerCase()]
+      });
+
+      chart.update();
+    })()
+
+    setInterval(() => {
+      const last = chart.data.labels[chart.data.labels.length - 1];
+
+      (async () => {
+        const response = await fetch("/dashboard?last=" + last, {
+          headers: {
+            "Content-Type": "application/json",
+          }
+        });
+
+        const responseJson = await response.json();
+
+        if(responseJson.label){
+          if(chart.data.labels.length >= 20){
+            chart.data.labels.splice(0, 1);
+            chart.data.datasets.forEach((dataset) => {
+              dataset.data.splice(0, 1);
+            });
+          }
+
+          chart.data.labels.push(responseJson.label)
+          chart.data.datasets.forEach((dataset, index) => {
+              dataset.data.push(responseJson.data[index]);
+          });
+
+          chart.update();
+        }
+      })()
+
+    }, 10000);
   </script>
 @endsection
