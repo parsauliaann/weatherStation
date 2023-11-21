@@ -50,10 +50,19 @@
                                     <label class="form-label">Nama</label>
                                     <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama" />
                                 </div>
-                                <div class="mb-3">
-                                  <label class="form-label">Status</label>
-                                  <input type="text" class="form-control" id="status" name="status" placeholder="Status" />
-                              </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                  <label class="form-check-label" for="flexRadioDefault1">
+                                    Dosen
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                  <label class="form-check-label" for="flexRadioDefault2">
+                                    Mahasiswa
+                                  </label>
+                                </div>
+                                
                                 <div class="modal-footer d-block">
                                     <button type="submit" class="btn btn-info float-end">Submit</button>
                                 </div>
