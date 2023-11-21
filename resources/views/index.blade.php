@@ -51,16 +51,16 @@
                     <div class="text-center">
                       <button class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0" name="submit">Sign in</button>
                     </div>
-                    <?php if(isset($error)) : ?>
-                      <div class="mt-3 text-danger"><?php echo $error ?></div>
-                    <?php endif; ?>
+                    
+                    @if(session()->has('error'))
+                      <div class="mt-3 text-danger">{{ session()->get('error') }}</div>
+                    @endif
                   </form>
                 </div>
               </div>
             </div>
             <div class="col-6 d-lg-flex d-none h-100 my-auto pe-0 position-absolute top-0 end-0 text-center justify-content-center flex-column">
-              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url({{asset('img/cloud.jpg')}})";
-          background-size: cover;">
+              <div class="position-relative bg-gradient-primary h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center overflow-hidden" style="background-image: url({{asset('img/cloud.jpg')}}); background-size: cover;">
                 <span class="mask bg-gradient-primary opacity-6"></span>
                 <h4 class="mt-5 text-white font-weight-bolder position-relative">"Sensors to Cloud and Industrial Internet of Things Platform"</h4>
                 <!-- <p class="text-white position-relative">The more effortless the writing looks, the more effort the writer actually put into the process.</p> -->
