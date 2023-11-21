@@ -428,29 +428,44 @@
 
 @section('js')
   <script>
+    const language = {
+        'paginate': {
+            'previous': '<i class="fa fa-chevron-left"></i>',
+            'next': '<i class="fa fa-chevron-right"></i>'
+        }
+    };
+
     new DataTable('#tableWindSpeed', {
-      ajax: "/api/sensor-datas" + '?parameter=wind_speed&today=1'
+      ajax: "/api/sensor-datas" + '?parameter=wind_speed&today=1',
+      language: language
     });
     new DataTable('#tableWindDirection', {
-      ajax: "/api/sensor-datas" + '?parameter=wind_direction&today=1'
+      ajax: "/api/sensor-datas" + '?parameter=wind_direction&today=1',
+      language: language
     });
     new DataTable('#tableTemperature', {
-      ajax: "/api/sensor-datas" + '?parameter=temperature&today=1'
+      ajax: "/api/sensor-datas" + '?parameter=temperature&today=1',
+      language: language
     });
     new DataTable('#tableHumidity', {
-      ajax: "/api/sensor-datas" + '?parameter=humidity&today=1'
+      ajax: "/api/sensor-datas" + '?parameter=humidity&today=1',
+      language: language
     });
     new DataTable('#tablePressure', {
-      ajax: "/api/sensor-datas" + '?parameter=pressure&today=1'
+      ajax: "/api/sensor-datas" + '?parameter=pressure&today=1',
+      language: language
     });
     new DataTable('#tableRainfall', {
-      ajax: "/api/sensor-datas" + '?parameter=rainfall&today=1'
+      ajax: "/api/sensor-datas" + '?parameter=rainfall&today=1',
+      language: language
     });
     new DataTable('#tableSolarRadiation', {
-      ajax: "/api/sensor-datas" + '?parameter=solar_radiation&today=1'
+      ajax: "/api/sensor-datas" + '?parameter=solar_radiation&today=1',
+      language: language
     });
     new DataTable('#tablePARSensor', {
-      ajax: "/api/sensor-datas" + '?parameter=par_sensor&today=1'
+      ajax: "/api/sensor-datas" + '?parameter=par_sensor&today=1',
+      language: language
     });
   </script>
 
