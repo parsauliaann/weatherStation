@@ -56,7 +56,7 @@
                             role="tab"
                             aria-controls="ex3-tabs-2"
                             aria-selected="false"
-                            >Wind Speed</a
+                            >Wind Direction</a
                         >
                         </li>
                         <li class="nav-item" role="presentation">
@@ -144,13 +144,13 @@
                                   <thead>
                                       <tr>
                                           <th>Waktu</th>
-                                          <th>Celcius</th>
+                                          <th>Kecepatan</th>
                                       </tr>
                                   </thead>
                                   <tfoot>
                                       <tr>
                                           <th>Waktu</th>
-                                          <th>Celcius</th>
+                                          <th>Kecepatan</th>
                                       </tr>
                                   </tfoot>
                               </table>
@@ -164,13 +164,13 @@
                                       <thead>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>Arah</th>
                                           </tr>
                                       </thead>
                                       <tfoot>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>Arah</th>
                                           </tr>
                                       </tfoot>
                                   </table>
@@ -200,17 +200,17 @@
                         <div class="tab-pane fade" id="ex3-tabs-4" role="tabpanel" aria-labelledby="ex3-tab-4">
                             <div class="card-body px-0 pt-0 pb-2">
                                 <div class="table-responsive p-0">
-                                  <table id="tableTemperature" class="table table-striped" style="width:100%">
+                                  <table id="tableHumidity" class="table table-striped" style="width:100%">
                                       <thead>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>Persentase</th>
                                           </tr>
                                       </thead>
                                       <tfoot>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>Persentase</th>
                                           </tr>
                                       </tfoot>
                                   </table>
@@ -220,17 +220,17 @@
                         <div class="tab-pane fade" id="ex3-tabs-5" role="tabpanel" aria-labelledby="ex3-tab-5">
                             <div class="card-body px-0 pt-0 pb-2">
                                 <div class="table-responsive p-0">
-                                  <table id="tableTemperature" class="table table-striped" style="width:100%">
+                                  <table id="tablePressure" class="table table-striped" style="width:100%">
                                       <thead>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>Tekanan</th>
                                           </tr>
                                       </thead>
                                       <tfoot>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>Tekanan</th>
                                           </tr>
                                       </tfoot>
                                   </table>
@@ -240,17 +240,17 @@
                         <div class="tab-pane fade" id="ex3-tabs-6" role="tabpanel" aria-labelledby="ex3-tab-6">
                             <div class="card-body px-0 pt-0 pb-2">
                                 <div class="table-responsive p-0">
-                                  <table id="tableTemperature" class="table table-striped" style="width:100%">
+                                  <table id="tableRainfall" class="table table-striped" style="width:100%">
                                       <thead>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>Milimeter</th>
                                           </tr>
                                       </thead>
                                       <tfoot>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>Milimeter</th>
                                           </tr>
                                       </tfoot>
                                   </table>
@@ -260,17 +260,17 @@
                         <div class="tab-pane fade" id="ex3-tabs-7" role="tabpanel" aria-labelledby="ex3-tab-7">
                             <div class="card-body px-0 pt-0 pb-2">
                                 <div class="table-responsive p-0">
-                                  <table id="tableTemperature" class="table table-striped" style="width:100%">
+                                  <table id="tableSolarRadiation" class="table table-striped" style="width:100%">
                                       <thead>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>W/m²</th>
                                           </tr>
                                       </thead>
                                       <tfoot>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>W/m²</th>
                                           </tr>
                                       </tfoot>
                                   </table>
@@ -280,17 +280,17 @@
                         <div class="tab-pane fade" id="ex3-tabs-8" role="tabpanel" aria-labelledby="ex3-tab-8">
                             <div class="card-body px-0 pt-0 pb-2">
                                 <div class="table-responsive p-0">
-                                  <table id="tableTemperature" class="table table-striped" style="width:100%">
+                                  <table id="tablePARSensor" class="table table-striped" style="width:100%">
                                       <thead>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>W/m²</th>
                                           </tr>
                                       </thead>
                                       <tfoot>
                                           <tr>
                                               <th>Waktu</th>
-                                              <th>Celcius</th>
+                                              <th>W/m²</th>
                                           </tr>
                                       </tfoot>
                                   </table>
@@ -385,6 +385,34 @@
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
+  </script>
+  <script>
+    // Fungsi untuk menangani perubahan tab
+function handleTabChange(clickedTab) {
+    // Menghapus kelas 'active' dari semua tab
+    document.querySelectorAll('.nav-link').forEach(function (tab) {
+        tab.classList.remove('active');
+    });
+
+    // Menambahkan kelas 'active' pada tab yang diklik
+    clickedTab.classList.add('active');
+    // Menangani tab content
+var targetId = clickedTab.getAttribute('href').substring(1);
+    document.querySelectorAll('.tab-pane').forEach(function (tabContent) {
+        tabContent.classList.remove('show', 'active');
+    });
+    document.getElementById(targetId).classList.add('show', 'active');
+}
+
+
+// Menambahkan event listener untuk setiap tab
+document.querySelectorAll('.nav-link').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+        // Memanggil fungsi untuk menangani perubahan tab
+        handleTabChange(this);
+    });
+});
+
   </script>
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
