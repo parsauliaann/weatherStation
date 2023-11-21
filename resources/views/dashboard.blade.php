@@ -1,75 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{asset('img/apple-icon.png')}}">
-  <link rel="icon" type="image/png" href="{{asset('img/gundar.png')}}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
-  <title>
-    Dashboard Weather Station S475
-  </title>
-  <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
-  <!-- Nucleo Icons -->
-  <link href="{{ asset('css/nucleo-icons.css') }}" rel="stylesheet" />
-  <link href="{{ asset('css/nucleo-svg.css') }}" rel="stylesheet" />
-  <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/b7f80dc676.js" crossorigin="anonymous"></script>
-  <link href="{{ asset('css/nucleo-svg.css') }}" rel="stylesheet" />
-  <!-- CSS Files -->
-  <link id="pagestyle" href="{{asset('css/argon-dashboard.css')}}" rel="stylesheet" />
-</head>
+@extends('layouts.app')
 
-<body class="g-sidenav-show   bg-gray-100" style="background-image: linear-gradient(to top, #209cff 0%, #68e0cf 100%);"
->
-  <div class="min-height-500 position-absolute w-100" ></div> 
-  
-  <main class="main-content position-relative border-radius-lg main ">
-  <!-- <button id="closeNav">&#9776; Open Sidebar</button> -->
- 
-  
-    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl " id="navbarBlur" data-scroll="false">
-      <div class="container-fluid py-1 px-3">
-        <nav aria-label="breadcrumb">
-          <img src="{{asset('img/ugtechnopark.png')}}" style="height:120px; object-fit: contain">
-          <h1 class="text-white">S475 Weather Station UG Techno Park</h1> 
-          <h6 class="font-weight-bolder text-white mb-0">Unnamed Road, 66Q5+5WX, Jamali, Kec. Mande, Kabupaten Cianjur, Jawa Barat 43292, Indonesia UG Techno Park</h6>
-        </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-          <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-          </div>
-          <ul class="navbar-nav  justify-content-end">      
-            <li class="nav-item d-flex align-items-center">
-              <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button class="btn nav-link text-white font-weight-bold px-0 shadow-none" name="logout">
-                  <i class="fa fa-sign-out me-sm-1"></i>
-                  <span class="d-sm-inline d-none">Log out</span>
-                </button>
-              </form>
-            </li>
-            <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-white p-0" id="iconNavbarSidenav">
-                <div class="sidenav-toggler-inner">
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                  <i class="sidenav-toggler-line bg-white"></i>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <!-- End Navbar -->
-    
-    <div class="container-fluid py-4">
+@section('content')
+  <div class="container-fluid py-4">
     <div class="row">
-
         <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
           <div class="card">
             <div class="card-body p-3">
@@ -490,344 +423,26 @@
             </div>
           </div>
         </div>
-      
-      <div class="row mt-4">
-        <div class="col-lg-7 mb-lg-0 mb-4">
-          <div class="card z-index-2 h-100">
-            <div class="card-header pb-0 pt-3 bg-transparent">
-              <h6 class="text-capitalize">Real-time curve</h6>
-            </div>
-            <div class="card-body p-3">
-              <div class="chart">
-                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5 mb-lg-0 mb-4">
-          <div class="card z-index-2 h-100">
-            <div class="card-header pb-0 pt-3 bg-transparent">
-              <h6 class="text-capitalize">Alarm Notify</h6>
-            </div>
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-12">
-                  <div class="card shadow-sm">
-                    <div class="card-body p-3">
-                      <h6 class="text-capitalize">Alarm 1</h6>
-                      <p>Deskripsi</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 mt-3">
-                  <div class="card shadow-sm">
-                    <div class="card-body p-3">
-                      <h6 class="text-capitalize">Alarm 2</h6>
-                      <p>Deskripsi</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 mt-3">
-                  <div class="card shadow-sm">
-                    <div class="card-body p-3">
-                      <h6 class="text-capitalize">Alarm 3</h6>
-                      <p>Deskripsi</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div class="row mt-4">
-        <div class="col-lg-7 mb-lg-0 mb-4">
-          <div class="card ">
-            <div class="card-header pb-0 p-3">
-              <div class="d-flex justify-content-between">
-                <h6 class="mb-2">Sales by Country</h6>
-              </div>
-            </div>
-            <div class="table-responsive">
-              <table class="table align-items-center ">
-                <tbody>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="./asset/img/icons/flags/US.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">United States</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">2500</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$230,900</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">29.9%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="./asset/img/icons/flags/DE.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Germany</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">3.900</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$440,000</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">40.22%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="./asset/img/icons/flags/GB.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Great Britain</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">1.400</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$190,700</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">23.44%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="w-30">
-                      <div class="d-flex px-2 py-1 align-items-center">
-                        <div>
-                          <img src="./asset/img/icons/flags/BR.png" alt="Country flag">
-                        </div>
-                        <div class="ms-4">
-                          <p class="text-xs font-weight-bold mb-0">Country:</p>
-                          <h6 class="text-sm mb-0">Brasil</h6>
-                        </div>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Sales:</p>
-                        <h6 class="text-sm mb-0">562</h6>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="text-center">
-                        <p class="text-xs font-weight-bold mb-0">Value:</p>
-                        <h6 class="text-sm mb-0">$143,960</h6>
-                      </div>
-                    </td>
-                    <td class="align-middle text-sm">
-                      <div class="col text-center">
-                        <p class="text-xs font-weight-bold mb-0">Bounce:</p>
-                        <h6 class="text-sm mb-0">32.14%</h6>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="card">
-            <div class="card-header pb-0 p-3">
-              <h6 class="mb-0">Categories</h6>
-            </div>
-            <div class="card-body p-3">
-              <ul class="list-group">
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-mobile-button text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Devices</h6>
-                      <span class="text-xs">250 in stock, <span class="font-weight-bold">346+ sold</span></span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-tag text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Tickets</h6>
-                      <span class="text-xs">123 closed, <span class="font-weight-bold">15 open</span></span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-box-2 text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Error logs</h6>
-                      <span class="text-xs">1 is active, <span class="font-weight-bold">40 closed</span></span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
-                </li>
-                <li class="list-group-item border-0 d-flex justify-content-between ps-0 border-radius-lg">
-                  <div class="d-flex align-items-center">
-                    <div class="icon icon-shape icon-sm me-3 bg-gradient-dark shadow text-center">
-                      <i class="ni ni-satisfied text-white opacity-10"></i>
-                    </div>
-                    <div class="d-flex flex-column">
-                      <h6 class="mb-1 text-dark text-sm">Happy users</h6>
-                      <span class="text-xs font-weight-bold">+ 430</span>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <button class="btn btn-link btn-icon-only btn-rounded btn-sm text-dark icon-move-right my-auto"><i class="ni ni-bold-right" aria-hidden="true"></i></button>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div> -->
-      <!-- <footer class="footer pt-3  ">
-        <div class="container-fluid">
-          <div class="row align-items-center justify-content-lg-between">
-            <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer> -->
     </div>
-  </main>
-  <aside class="sidenav navbar">
-    <div class=" navbar-collapse ">
-    <div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-    <i class="fa-solid fa-bars" style="color: #1a9957;"></i>
-    </a>
-    <div class="card shadow-sm">
-      <div class="card-header pb-0 pt-3 sidenav-header">
-        <div class="float-start">
-          <h4 class=" mt 0">S475 Weather Station UG Techno Park</h4>
+
+    <div class="row mt-4">
+      <div class="col-lg-12 mb-lg-0 mb-4">
+        <div class="card z-index-2">
+          <div class="card-header pb-0 pt-3 bg-transparent">
+            <h6 class="text-capitalize">Real-time curve</h6>
+          </div>
+          <div class="card-body p-3">
+            <div class="chart">
+              <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+            </div>
+          </div>
         </div>
-      </div>
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="{{ route('dashboard') }}">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Dashboard</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="{{ route('admins') }}">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-single-02 text-info text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Admin</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="{{ route('dataanalysis') }}">
-            <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="ni ni-chart-bar-32 text-warning text-sm opacity-10"></i>
-            </div>
-            <span class="nav-link-text ms-1">Data Analysis</span>
-          </a>
-        </li>
       </div>
     </div>
   </div>
-    </div>
-  </aside>
-  <!--   Core JS Files   -->
-  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
-  <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+@endsection
+
+@section('js')
   <script>
     new DataTable('#tableWindSpeed', {
       ajax: "/api/sensor-datas" + '?parameter=wind_speed'
@@ -854,11 +469,7 @@
       ajax: "/api/sensor-datas" + '?parameter=par_sensor'
     });
   </script>
-  <script src="{{asset('js/core/popper.min.js')}}"></script>
-  <script src="{{asset('js/core/bootstrap.min.js')}}"></script>
-  <script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>
-  <script src="{{asset('js/plugins/smooth-scrollbar.min.js')}}"></script>
-  <script src="{{asset('js/plugins/chartjs.min.js')}}"></script>
+
   <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
 
@@ -1019,32 +630,4 @@
       },
     });
   </script>
-  <!-- <script>
-    var win = navigator.platform.indexOf('Win') > -1;
-    if (win && document.querySelector('#sidenav-scrollbar')) {
-      var options = {
-        damping: '0.5'
-      }
-      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-  </script> -->
-  <!-- Github buttons -->
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{asset('js/argon-dashboard.min.js')}}"></script>
-  <!-- <script>
-    document.getElementById('closeNav').addEventListener('click', function(){
-      const el = document.getElementById("sidenav-main")
-
-      if(el.classList.contains('hide')){
-        el.style.width = "16.75rem";
-        el.classList.remove('hide');
-      }else{
-        el.style.width = "0";
-        el.classList.add('hide');
-      }
-    })
-  </script> -->
-</body>
-
-</html>
+@endsection
