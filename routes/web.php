@@ -34,27 +34,29 @@ Route::middleware('auth')->group(function(){
     Route::get('/dashboard', function(){
         return view('dashboard');
     })->name('dashboard');
-
-    Route::get('/admins', function(){
-        $admins = Admin::all();
-
-        return view('admins', [
-            'admins' => $admins,
-        ]);
-    })->name('admins');
-
-    Route::post('/admins', function(Request $request){
-        Admin::create([
-            'name' => $request->name,
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
-            'status' => $request->status,
-        ]);
-
-        return back();
-    })->name('admins.store');
-
-    Route::get('/dataanalysis', function(){
-        return view('dataanalysis');
-    })->name('dataanalysis');
+    
+    Route::middleware('dosen')->group(function(){
+        Route::get('/admins', function(){
+            $admins = Admin::all();
+    
+            return view('admins', [
+                'admins' => $admins,
+            ]);
+        })->name('admins');
+    
+        Route::post('/admins', function(Request $request){
+            Admin::create([
+                'name' => $request->name,
+                'username' => $request->username,
+                'password' => Hash::make($request->password),
+                'status' => $request->status,
+            ]);
+    
+            return back();
+        })->name('admins.store');
+    
+        Route::get('/dataanalysis', function(){
+            return view('dataanalysis');
+        })->name('dataanalysis');
+    });
 });

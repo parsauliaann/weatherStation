@@ -55,6 +55,7 @@
                                         <span class="nav-link-text ms-1">Dashboard</span>
                                     </a>
                                 </li>
+                                @if(auth()->user()->status == 'dosen')
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('admins') }}">
                                         <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
@@ -71,6 +72,7 @@
                                         <span class="nav-link-text ms-1">Data Analysis</span>
                                     </a>
                                 </li>
+                                @endif
                                 <li class="nav-item">
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
