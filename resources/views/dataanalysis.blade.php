@@ -236,7 +236,7 @@
                                             </div>
                                             <div class="card-body p-3">
                                             <div class="chart">
-                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                                <canvas id="chart-line3" class="chart-canvas" height="300"></canvas>
                                             </div>
                                             </div>
                                         </div>
@@ -288,7 +288,7 @@
                                             </div>
                                             <div class="card-body p-3">
                                             <div class="chart">
-                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                                <canvas id="chart-line4" class="chart-canvas" height="300"></canvas>
                                             </div>
                                             </div>
                                         </div>
@@ -340,7 +340,7 @@
                                             </div>
                                             <div class="card-body p-3">
                                             <div class="chart">
-                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                                <canvas id="chart-line5" class="chart-canvas" height="300"></canvas>
                                             </div>
                                             </div>
                                         </div>
@@ -392,7 +392,7 @@
                                             </div>
                                             <div class="card-body p-3">
                                             <div class="chart">
-                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                                <canvas id="chart-line6" class="chart-canvas" height="300"></canvas>
                                             </div>
                                             </div>
                                         </div>
@@ -444,7 +444,7 @@
                                             </div>
                                             <div class="card-body p-3">
                                             <div class="chart">
-                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                                <canvas id="chart-line7" class="chart-canvas" height="300"></canvas>
                                             </div>
                                             </div>
                                         </div>
@@ -496,7 +496,7 @@
                                             </div>
                                             <div class="card-body p-3">
                                             <div class="chart">
-                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                                <canvas id="chart-line8" class="chart-canvas" height="300"></canvas>
                                             </div>
                                             </div>
                                         </div>
@@ -603,9 +603,16 @@
         language: language
     });
   </script>
+
   <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
     var ctx2 = document.getElementById("chart-line2").getContext("2d");
+    var ctx3 = document.getElementById("chart-line3").getContext("2d");
+    var ctx4 = document.getElementById("chart-line4").getContext("2d");
+    var ctx5 = document.getElementById("chart-line5").getContext("2d");
+    var ctx6 = document.getElementById("chart-line6").getContext("2d");
+    var ctx7 = document.getElementById("chart-line7").getContext("2d");
+    var ctx8 = document.getElementById("chart-line8").getContext("2d");
 
     let options = {
         responsive: true,
@@ -666,7 +673,7 @@
     let chart = new Chart(ctx1, {
         type: "line",
         data: {
-            labels: ['1', '2'],
+            labels: ['Jam ke-1', 'Jam ke-2', 'Jam ke-3'],
             datasets: [
                 {
                     label: "Wind Speed",
@@ -675,7 +682,7 @@
                     borderColor: "#5e72e4",
                     borderWidth: 2,
                     fill: true,
-                    data: [1, 2],
+                    data: [1, 7, 2],
                     maxBarThickness: 6
                 }
             ],
@@ -686,7 +693,7 @@
     let chart2 = new Chart(ctx2, {
         type: "line",
         data: {
-            labels: ['1', '2'],
+            labels: ['Jam ke-1', 'Jam ke-2', 'Jam ke-3'],
             datasets: [
                 {
                     label: "Wind Direction",
@@ -695,7 +702,127 @@
                     borderColor: "#5e72e4",
                     borderWidth: 2,
                     fill: true,
-                    data: [1, 2],
+                    data: [1, 3, 6],
+                    maxBarThickness: 6
+                }
+            ],
+        },
+        options: options,
+    });
+
+    let chart3 = new Chart(ctx3, {
+        type: "line",
+        data: {
+            labels: ['Jam ke-1', 'Jam ke-2', 'Jam ke-3'],
+            datasets: [
+                {
+                    label: "Temperature",
+                    borderWidth: 0,
+                    pointRadius: 2,
+                    borderColor: "#21b1ff",
+                    borderWidth: 2,
+                    fill: true,
+                    data: [5, 3, 1],
+                    maxBarThickness: 6
+                }
+            ],
+        },
+        options: options,
+    });
+
+    let chart4 = new Chart(ctx4, {
+        type: "line",
+        data: {
+            labels: ['Jam ke-1', 'Jam ke-2', 'Jam ke-3'],
+            datasets: [
+                {
+                    label: "Humidity",
+                    borderWidth: 0,
+                    pointRadius: 2,
+                    borderColor: "#f5c842",
+                    borderWidth: 2,
+                    fill: true,
+                    data: [1, 4, 2],
+                    maxBarThickness: 6
+                }
+            ],
+        },
+        options: options,
+    });
+
+    let chart5 = new Chart(ctx5, {
+        type: "line",
+        data: {
+            labels: ['Jam ke-1', 'Jam ke-2', 'Jam ke-3'],
+            datasets: [
+                {
+                    label: "Pressure",
+                    borderWidth: 0,
+                    pointRadius: 2,
+                    borderColor: "#40c6ff",
+                    borderWidth: 2,
+                    fill: true,
+                    data: [5, 1, 6],
+                    maxBarThickness: 6
+                }
+            ],
+        },
+        options: options,
+    });
+
+    let chart6 = new Chart(ctx6, {
+        type: "line",
+        data: {
+            labels: ['Jam ke-1', 'Jam ke-2', 'Jam ke-3'],
+            datasets: [
+                {
+                    label: "Rainfall",
+                    borderWidth: 0,
+                    pointRadius: 2,
+                    borderColor: "#cbeaf7",
+                    borderWidth: 2,
+                    fill: true,
+                    data: [3, 6, 1],
+                    maxBarThickness: 6
+                }
+            ],
+        },
+        options: options,
+    });
+
+    let chart7 = new Chart(ctx7, {
+        type: "line",
+        data: {
+            labels: ['Jam ke-1', 'Jam ke-2', 'Jam ke-3'],
+            datasets: [
+                {
+                    label: "Solar Radiation",
+                    borderWidth: 0,
+                    pointRadius: 2,
+                    borderColor: "#464e52",
+                    borderWidth: 2,
+                    fill: true,
+                    data: [2, 3, 4],
+                    maxBarThickness: 6
+                }
+            ],
+        },
+        options: options,
+    });
+
+    let chart8 = new Chart(ctx8, {
+        type: "line",
+        data: {
+            labels: ['Jam ke-1', 'Jam ke-2', 'Jam ke-3'],
+            datasets: [
+                {
+                    label: "PAR Sensor",
+                    borderWidth: 0,
+                    pointRadius: 2,
+                    borderColor: "#bfb10f",
+                    borderWidth: 2,
+                    fill: true,
+                    data: [7, 4, 1],
                     maxBarThickness: 6
                 }
             ],

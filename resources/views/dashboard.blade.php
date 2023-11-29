@@ -561,7 +561,7 @@
             maxBarThickness: 6
           },
           {
-            label: "Par Sensor",
+            label: "PAR Sensor",
             borderWidth: 0,
             pointRadius: 2,
             borderColor: "#bfb10f",
