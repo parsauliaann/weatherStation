@@ -54,7 +54,7 @@
                         role="tab"
                         aria-controls="ex3-tabs-4"
                         aria-selected="false"
-                        >Humidiy</a
+                        >Humidity</a
                     >
                     </li>
                     <li class="nav-item" role="presentation">
@@ -112,162 +112,415 @@
                 <!-- Tabs content -->
                 <div class="tab-content" id="ex2-content">
                     <div class="tab-pane fade show active" id="ex3-tabs-1" role="tabpanel" aria-labelledby="ex3-tab-1">
-                    <div class="card-body px-0 pt-0 pb-2">
-                        <div class="table-responsive p-0">
-                          <table id="tableWindSpeed" class="table table-striped" style="width:100%">
-                              <thead>
-                                  <tr>
-                                      <th>Waktu</th>
-                                      <th>Kecepatan</th>
-                                  </tr>
-                              </thead>
-                              <tfoot>
-                                  <tr>
-                                      <th>Waktu</th>
-                                      <th>Kecepatan</th>
-                                  </tr>
-                              </tfoot>
-                          </table>
+                        <div class="card-body px-0 pt-0 pb-2">
+                            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-ga-tab-ws" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Graphical Analysis</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-ta-tab-ws" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Tabular Analysis</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-ga-tab-ws">
+                                    <div class="row mt-2">
+                                        <div class="col-lg-12 mb-lg-0 mb-4">
+                                        <div class="card z-index-2">
+                                            <div class="card-header pb-0 pt-3 bg-transparent">
+                                            <h6 class="text-capitalize">Real-time curve</h6>
+                                            </div>
+                                            <div class="card-body p-3">
+                                            <div class="chart">
+                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-ta-tab-ws">
+                                    <div class="table-responsive p-0">
+                                        <table id="tableWindSpeed" class="table table-striped" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Kecepatan</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Kecepatan</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                      </div>
                     </div>
                     <div class="tab-pane fade" id="ex3-tabs-2" role="tabpanel" aria-labelledby="ex3-tab-2">
                         <div class="card-body px-0 pt-0 pb-2">
-                            <div class="table-responsive p-0">
-                              <table id="tableWindDirection" class="table table-striped" style="width:100%">
-                                  <thead>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>Arah</th>
-                                      </tr>
-                                  </thead>
-                                  <tfoot>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>Arah</th>
-                                      </tr>
-                                  </tfoot>
-                              </table>
+                            {{-- Nav atas --}}
+                            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab-winddirection" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-ga-tab-wd" data-bs-toggle="pill" data-bs-target="#pills-graph-winddirection" type="button" role="tab" aria-controls="pills-graph-winddirection" aria-selected="true">Graphical Analysis</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-ta-tab-wd" data-bs-toggle="pill" data-bs-target="#pills-tabular-winddirection" type="button" role="tab" aria-controls="pills-tabular-winddirection" aria-selected="false">Tabular Analysis</button>
+                                </li>
+                            </ul>
+                            {{-- Nav Bawah --}}
+
+                            {{-- Isi NavTab --}}
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-graph-winddirection" role="tabpanel" aria-labelledby="pills-ga-tab-wd">
+                                    <div class="row mt-2">
+                                        <div class="col-lg-12 mb-lg-0 mb-4">
+                                        <div class="card z-index-2">
+                                            <div class="card-header pb-0 pt-3 bg-transparent">
+                                            <h6 class="text-capitalize">Real-time curve</h6>
+                                            </div>
+                                            <div class="card-body p-3">
+                                            <div class="chart">
+                                                <canvas id="chart-line2" class="chart-canvas" height="300"></canvas>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-tabular-winddirection" role="tabpanel" aria-labelledby="pills-ta-tab-wd">
+                                    <div class="table-responsive p-0">
+                                        <table id="tableWindDirection" class="table table-striped" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Arah</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Arah</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
+                            {{-- Bawah isi navtab --}}
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="ex3-tabs-3" role="tabpanel" aria-labelledby="ex3-tab-3">
                         <div class="card-body px-0 pt-0 pb-2">
-                            <div class="table-responsive p-0">
-                              <table id="tableTemperature" class="table table-striped" style="width:100%">
-                                  <thead>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>Celcius</th>
-                                      </tr>
-                                  </thead>
-                                  <tfoot>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>Celcius</th>
-                                      </tr>
-                                  </tfoot>
-                              </table>
+                            {{-- Nav atas --}}
+                            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab-temperature" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-ga-tab-temperature" data-bs-toggle="pill" data-bs-target="#pills-graph-temperature" type="button" role="tab" aria-controls="pills-graph-temperature" aria-selected="true">Graphical Analysis</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-ta-tab-temperature" data-bs-toggle="pill" data-bs-target="#pills-tabular-temperature" type="button" role="tab" aria-controls="pills-tabular-temperature" aria-selected="false">Tabular Analysis</button>
+                                </li>
+                            </ul>
+                            {{-- Nav Bawah --}}
+
+                            {{-- Isi NavTab --}}
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-graph-temperature" role="tabpanel" aria-labelledby="pills-ga-tab-temperature">
+                                    <div class="row mt-2">
+                                        <div class="col-lg-12 mb-lg-0 mb-4">
+                                        <div class="card z-index-2">
+                                            <div class="card-header pb-0 pt-3 bg-transparent">
+                                            <h6 class="text-capitalize">Real-time curve</h6>
+                                            </div>
+                                            <div class="card-body p-3">
+                                            <div class="chart">
+                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-tabular-temperature" role="tabpanel" aria-labelledby="pills-ta-tab-temperature">
+                                    <div class="table-responsive p-0">
+                                        <table id="tableTemperature" class="table table-striped" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Celcius</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Celcius</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="ex3-tabs-4" role="tabpanel" aria-labelledby="ex3-tab-4">
                         <div class="card-body px-0 pt-0 pb-2">
-                            <div class="table-responsive p-0">
-                              <table id="tableHumidity" class="table table-striped" style="width:100%">
-                                  <thead>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>Persentase</th>
-                                      </tr>
-                                  </thead>
-                                  <tfoot>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>Persentase</th>
-                                      </tr>
-                                  </tfoot>
-                              </table>
+                            {{-- Nav atas --}}
+                            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab-humidity" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-ga-tab-humidity" data-bs-toggle="pill" data-bs-target="#pills-graph-humidity" type="button" role="tab" aria-controls="pills-graph-humidity" aria-selected="true">Graphical Analysis</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-ta-tab-humidity" data-bs-toggle="pill" data-bs-target="#pills-tabular-humidity" type="button" role="tab" aria-controls="pills-tabular-humidity" aria-selected="false">Tabular Analysis</button>
+                                </li>
+                            </ul>
+                            {{-- Nav Bawah --}}
+
+                            {{-- Isi NavTab --}}
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-graph-humidity" role="tabpanel" aria-labelledby="pills-ga-tab-humidity">
+                                    <div class="row mt-2">
+                                        <div class="col-lg-12 mb-lg-0 mb-4">
+                                        <div class="card z-index-2">
+                                            <div class="card-header pb-0 pt-3 bg-transparent">
+                                            <h6 class="text-capitalize">Real-time curve</h6>
+                                            </div>
+                                            <div class="card-body p-3">
+                                            <div class="chart">
+                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-tabular-humidity" role="tabpanel" aria-labelledby="pills-ta-tab-humidity">
+                                    <div class="table-responsive p-0">
+                                        <table id="tableHumidity" class="table table-striped" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Persentase</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Persentase</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="ex3-tabs-5" role="tabpanel" aria-labelledby="ex3-tab-5">
                         <div class="card-body px-0 pt-0 pb-2">
-                            <div class="table-responsive p-0">
-                              <table id="tablePressure" class="table table-striped" style="width:100%">
-                                  <thead>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>Tekanan</th>
-                                      </tr>
-                                  </thead>
-                                  <tfoot>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>Tekanan</th>
-                                      </tr>
-                                  </tfoot>
-                              </table>
+                            {{-- Nav atas --}}
+                            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab-pressure" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-ga-tab-pressure" data-bs-toggle="pill" data-bs-target="#pills-graph-pressure" type="button" role="tab" aria-controls="pills-graph-pressure" aria-selected="true">Graphical Analysis</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-ta-tab-pressure" data-bs-toggle="pill" data-bs-target="#pills-tabular-pressure" type="button" role="tab" aria-controls="pills-tabular-pressure" aria-selected="false">Tabular Analysis</button>
+                                </li>
+                            </ul>
+                            {{-- Nav Bawah --}}
+
+                            {{-- Isi NavTab --}}
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-graph-pressure" role="tabpanel" aria-labelledby="pills-ga-tab-pressure">
+                                    <div class="row mt-2">
+                                        <div class="col-lg-12 mb-lg-0 mb-4">
+                                        <div class="card z-index-2">
+                                            <div class="card-header pb-0 pt-3 bg-transparent">
+                                            <h6 class="text-capitalize">Real-time curve</h6>
+                                            </div>
+                                            <div class="card-body p-3">
+                                            <div class="chart">
+                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-tabular-pressure" role="tabpanel" aria-labelledby="pills-ta-tab-pressure">
+                                    <div class="table-responsive p-0">
+                                        <table id="tablePressure" class="table table-striped" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Tekanan</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Tekanan</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                           </div>
                     </div>
                     <div class="tab-pane fade" id="ex3-tabs-6" role="tabpanel" aria-labelledby="ex3-tab-6">
                         <div class="card-body px-0 pt-0 pb-2">
-                            <div class="table-responsive p-0">
-                              <table id="tableRainfall" class="table table-striped" style="width:100%">
-                                  <thead>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>Milimeter</th>
-                                      </tr>
-                                  </thead>
-                                  <tfoot>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>Milimeter</th>
-                                      </tr>
-                                  </tfoot>
-                              </table>
+                            {{-- Nav atas --}}
+                            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab-rainfall" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-ga-tab-rainfall" data-bs-toggle="pill" data-bs-target="#pills-graph-rainfall" type="button" role="tab" aria-controls="pills-graph-rainfall" aria-selected="true">Graphical Analysis</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-ta-tab-rainfall" data-bs-toggle="pill" data-bs-target="#pills-tabular-rainfall" type="button" role="tab" aria-controls="pills-tabular-rainfall" aria-selected="false">Tabular Analysis</button>
+                                </li>
+                            </ul>
+                            {{-- Nav Bawah --}}
+
+                            {{-- Isi NavTab --}}
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-graph-rainfall" role="tabpanel" aria-labelledby="pills-ga-tab-rainfall">
+                                    <div class="row mt-2">
+                                        <div class="col-lg-12 mb-lg-0 mb-4">
+                                        <div class="card z-index-2">
+                                            <div class="card-header pb-0 pt-3 bg-transparent">
+                                            <h6 class="text-capitalize">Real-time curve</h6>
+                                            </div>
+                                            <div class="card-body p-3">
+                                            <div class="chart">
+                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-tabular-rainfall" role="tabpanel" aria-labelledby="pills-ta-tab-rainfall">
+                                    <div class="table-responsive p-0">
+                                        <table id="tableRainfall" class="table table-striped" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Milimeter</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Milimeter</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                           </div>
                     </div>
                     <div class="tab-pane fade" id="ex3-tabs-7" role="tabpanel" aria-labelledby="ex3-tab-7">
                         <div class="card-body px-0 pt-0 pb-2">
-                            <div class="table-responsive p-0">
-                              <table id="tableSolarRadiation" class="table table-striped" style="width:100%">
-                                  <thead>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>W/m²</th>
-                                      </tr>
-                                  </thead>
-                                  <tfoot>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>W/m²</th>
-                                      </tr>
-                                  </tfoot>
-                              </table>
+                            {{-- Nav atas --}}
+                            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab-solarradiation" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-ga-tab-solarradiation" data-bs-toggle="pill" data-bs-target="#pills-graph-solarradiation" type="button" role="tab" aria-controls="pills-graph-solarradiation" aria-selected="true">Graphical Analysis</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-ta-tab-solarradiation" data-bs-toggle="pill" data-bs-target="#pills-tabular-solarradiation" type="button" role="tab" aria-controls="pills-tabular-solarradiation" aria-selected="false">Tabular Analysis</button>
+                                </li>
+                            </ul>
+                            {{-- Nav Bawah --}}
+
+                            {{-- Isi NavTab --}}
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-graph-solarradiation" role="tabpanel" aria-labelledby="pills-ga-tab-solarradiation">
+                                    <div class="row mt-2">
+                                        <div class="col-lg-12 mb-lg-0 mb-4">
+                                        <div class="card z-index-2">
+                                            <div class="card-header pb-0 pt-3 bg-transparent">
+                                            <h6 class="text-capitalize">Real-time curve</h6>
+                                            </div>
+                                            <div class="card-body p-3">
+                                            <div class="chart">
+                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-tabular-solarradiation" role="tabpanel" aria-labelledby="pills-ta-tab-solarradiation">
+                                    <div class="table-responsive p-0">
+                                        <table id="tableSolarRadiation" class="table table-striped" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>W/m²</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>W/m²</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                           </div>
                     </div>
                     <div class="tab-pane fade" id="ex3-tabs-8" role="tabpanel" aria-labelledby="ex3-tab-8">
                         <div class="card-body px-0 pt-0 pb-2">
-                            <div class="table-responsive p-0">
-                              <table id="tablePARSensor" class="table table-striped" style="width:100%">
-                                  <thead>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>W/m²</th>
-                                      </tr>
-                                  </thead>
-                                  <tfoot>
-                                      <tr>
-                                          <th>Waktu</th>
-                                          <th>W/m²</th>
-                                      </tr>
-                                  </tfoot>
-                              </table>
+                            {{-- Nav atas --}}
+                            <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab-parsensor" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-ga-tab-ps" data-bs-toggle="pill" data-bs-target="#pills-graph-parsensor" type="button" role="tab" aria-controls="pills-graph-parsensor" aria-selected="true">Graphical Analysis</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-ta-tab-ps" data-bs-toggle="pill" data-bs-target="#pills-tabular-parsensor" type="button" role="tab" aria-controls="pills-tabular-parsensor" aria-selected="false">Tabular Analysis</button>
+                                </li>
+                            </ul>
+                            {{-- Nav Bawah --}}
+
+                            {{-- Isi NavTab --}}
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-graph-parsensor" role="tabpanel" aria-labelledby="pills-ga-tab-ps">
+                                    <div class="row mt-2">
+                                        <div class="col-lg-12 mb-lg-0 mb-4">
+                                        <div class="card z-index-2">
+                                            <div class="card-header pb-0 pt-3 bg-transparent">
+                                            <h6 class="text-capitalize">Real-time curve</h6>
+                                            </div>
+                                            <div class="card-body p-3">
+                                            <div class="chart">
+                                                <canvas id="chart-line" class="chart-canvas" height="300"></canvas>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-tabular-parsensor" role="tabpanel" aria-labelledby="pills-ta-tab-ps">
+                                    <div class="table-responsive p-0">
+                                        <table id="tablePARSensor" class="table table-striped" style="width:100%">
+                                            <thead>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Arah</th>
+                                                </tr>
+                                            </thead>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>Waktu</th>
+                                                    <th>Arah</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                           </div>
                     </div>
@@ -283,7 +536,7 @@
 @section('js')
   <script>
     // Fungsi untuk menangani perubahan tab
-function handleTabChange(clickedTab) {
+    function handleTabChange(clickedTab) {
     // Menghapus kelas 'active' dari semua tab
     document.querySelectorAll('.nav-link').forEach(function (tab) {
         tab.classList.remove('active');
@@ -292,7 +545,7 @@ function handleTabChange(clickedTab) {
     // Menambahkan kelas 'active' pada tab yang diklik
     clickedTab.classList.add('active');
     // Menangani tab content
-var targetId = clickedTab.getAttribute('href').substring(1);
+    var targetId = clickedTab.getAttribute('href').substring(1);
     document.querySelectorAll('.tab-pane').forEach(function (tabContent) {
         tabContent.classList.remove('show', 'active');
     });
@@ -301,12 +554,12 @@ var targetId = clickedTab.getAttribute('href').substring(1);
 
 
 // Menambahkan event listener untuk setiap tab
-document.querySelectorAll('.nav-link').forEach(function (tab) {
+    document.querySelectorAll('.nav-link').forEach(function (tab) {
     tab.addEventListener('click', function () {
         // Memanggil fungsi untuk menangani perubahan tab
         handleTabChange(this);
     });
-});
+    });
 
   </script>
   <script>
@@ -348,6 +601,169 @@ document.querySelectorAll('.nav-link').forEach(function (tab) {
     new DataTable('#tablePARSensor', {
       ajax: "/api/sensor-datas" + '?parameter=par_sensor',
         language: language
+    });
+  </script>
+  <script>
+    var ctx1 = document.getElementById("chart-line").getContext("2d");
+    var ctx2 = document.getElementById("chart-line2").getContext("2d");
+
+    var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke1.addColorStop(1, 'rgba(94, 114, 228, 0.2)');
+    gradientStroke1.addColorStop(0.2, 'rgba(94, 114, 228, 0.0)');
+    gradientStroke1.addColorStop(0, 'rgba(94, 114, 228, 0)');
+
+    let chart2 = new Chart(ctx2, {
+        type: "line",
+        data: {
+            dataset:[
+                {
+                    label: "Wind Direction",
+                    borderWidth: 0,
+                    pointRadius: 2,
+                    borderColor: "#ff6721",
+                    backgroundColor: gradientStroke1,
+                    borderWidth: 2,
+                    fill: true,
+                    data: [],
+                    maxBarThickness: 6
+                }
+            ],
+        },
+        options: {}
+    });
+
+    let chart = new Chart(ctx1, {
+    type: "line",
+    data: {
+        datasets: [
+        {
+            label: "Wind Speed",
+            borderWidth: 0,
+            pointRadius: 2,
+            borderColor: "#5e72e4",
+            backgroundColor: gradientStroke1,
+            borderWidth: 2,
+            fill: true,
+            data: [],
+            maxBarThickness: 6
+        }
+    ],
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index',
+        },
+        scales: {
+          y: {
+            grid: {
+              drawBorder: false,
+              display: true,
+              drawOnChartArea: true,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              padding: 10,
+              color: '#ccc',
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+          x: {
+            grid: {
+              drawBorder: false,
+              display: false,
+              drawOnChartArea: false,
+              drawTicks: false,
+              borderDash: [5, 5]
+            },
+            ticks: {
+              display: true,
+              color: '#ccc',
+              padding: 20,
+              font: {
+                size: 11,
+                family: "Open Sans",
+                style: 'normal',
+                lineHeight: 2
+              },
+            }
+          },
+        },
+      },
+    });
+
+    (async () => {
+      const response = await fetch("/dashboard", {
+        headers: {
+          "Content-Type": "application/json",
+        }
+      });
+
+      const responseJson = await response.json();
+
+      chart.data.labels = responseJson.labels;
+      chart.data.datasets.forEach((dataset, index) => {
+          dataset.data = responseJson.data[dataset.label.replace(' ', '_').toLowerCase()]
+      });
+
+      chart.update();
+    })()
+
+    setInterval(() => {
+      const last = chart.data.labels[chart.data.labels.length - 1];
+
+      (async () => {
+        const response = await fetch("/dashboard?last=" + last, {
+          headers: {
+            "Content-Type": "application/json",
+          }
+        });
+
+        const responseJson = await response.json();
+
+        if(responseJson.label){
+          if(chart.data.labels.length >= 20){
+            chart.data.labels.splice(0, 1);
+            chart.data.datasets.forEach((dataset) => {
+              dataset.data.splice(0, 1);
+            });
+          }
+
+          chart.data.labels.push(responseJson.label)
+          chart.data.datasets.forEach((dataset, index) => {
+              dataset.data.push(responseJson.data[index]);
+          });
+
+          chart.update();
+        }
+      })()
+
+    }, 10000);
+  </script>
+  <script>
+    const triggerTabList = [].slice.call(document.querySelectorAll('#myTab a'));
+    triggerTabList.forEach((triggerEl) => {
+    const tabTrigger = new Tab(triggerEl);
+
+    triggerEl.addEventListener('click', (event) => {
+        event.preventDefault();
+        tabTrigger.show();
+    });
     });
   </script>
 @endsection

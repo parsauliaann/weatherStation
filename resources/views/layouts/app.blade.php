@@ -10,6 +10,7 @@
         <!-- Fonts and icons -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Nucleo Icons -->
         <link href="{{ asset('css/nucleo-icons.css') }}" rel="stylesheet" />
@@ -23,6 +24,7 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
         <link id="pagestyle" href="{{asset('css/argon-dashboard.css')}}" rel="stylesheet" />
+        
         @livewireStyles
         @yield('css')
     </head>
@@ -108,6 +110,7 @@
         <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
         <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             if (document.querySelector(".fixed-plugin")) {
                 var fixedPlugin = document.querySelector(".fixed-plugin");
