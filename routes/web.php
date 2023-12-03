@@ -93,5 +93,9 @@ Route::middleware('auth')->group(function(){
         Route::get('/dataanalysis', function(){
             return view('dataanalysis');
         })->name('dataanalysis');
+
+        Route::get('/about', function(){
+            return view('about');
+        })->name('about');
     });
 });
